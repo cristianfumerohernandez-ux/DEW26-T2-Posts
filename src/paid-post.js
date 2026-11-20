@@ -1,16 +1,17 @@
-class PaidPost {
-    name;
-    price;
-    #number = 0;
-    constructor(name,price){
-       this.name = name  
-       this.price = price
-    }
+import Post from './post.js'
 
-     get summary(){
-        return  `${this.name} publication number ${this.#number}`;
+class PaidPost extends Post {
+  constructor(name, price) {
+    super(name)
+    this.price = price
+  }
+
+  attach(subscriber) {
+    if (typeof subscriber.billing === 'number') {
+      super.attach(subscriber)
     }
+  }
 }
 
 export { PaidPost };
-export default PaidPost;
+export default PaidPost

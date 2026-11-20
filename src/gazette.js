@@ -1,13 +1,7 @@
-class Gazette{
-    name;
-    #number = 0;
-    constructor(name){
-        this.name = name;
-        
-    }
-     get summary(){
-        return  `${this.name} publication number ${this.#number}`;
-    }
+import Post from './post.js'
+
+class Gazette extends Post {
 }
+
 export { Gazette };
-export default Gazette;
+export default Gazette

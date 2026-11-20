@@ -1,20 +1,15 @@
+import PaidPost from './paid-post.js'
 
-class Newspaper{
-    name;
-    price;
-    #number = 0;
-    district;
-    constructor(name,price,district){
-        this.name = name;
-        this.price = price;
-        this.district = district;
-    }
-    get summary(){
-        return  `${this.name} publication number ${this.#number} of ${this.district}`;
-    }
+class Newspaper extends PaidPost {
+  constructor(name, price, district) {
+    super(name, price)
+    this.district = district
+  }
 
+  get summary() {
+    return `${super.summary} of ${this.district}`
+  }
 }
 
-
 export { Newspaper };
-export default Newspaper;
+export default Newspaper
